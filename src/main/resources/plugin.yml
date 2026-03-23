@@ -1,0 +1,16 @@
+main: org.bestraxstudio.advancedenchantments.Loader
+name: enchantesss_vanila
+api-version: 1.21
+version: 1.0
+authors:
+  - BestraXStudio
+  - FBIFlow
+prefix: EnchantmentsVanilla
+commands:
+  give-book:
+    description: add enchantment book to inventory
+    usage: /give-book <book-name> #book-names: AutoRepair, Cute, Resistance, Telekinesis, TreeCutter, Wisdom
+    permission: vanilla_enchantments.admin
+  enchantsss:
+    description: get all enchantments info
+    usage: /enchantsss list
