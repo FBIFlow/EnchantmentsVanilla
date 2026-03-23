@@ -1,4 +1,4 @@
-main: org.bestraxstudio.advancedenchantments.Loader
+main: me.fbiflow.enchantmentsvanilla.Loader
 name: enchantesss_vanila
 api-version: 1.21
 version: 1.0
