@@ -50,7 +50,8 @@ public class WitherProtection extends Enchantment {
                 if (!(event.getEntity() instanceof Player player)) {
                     return;
                 }
-                if (event.getCause() == EntityDamageEvent.DamageCause.WITHER) {
+                if (event.getCause() == EntityDamageEvent.DamageCause.WITHER
+                || event.getCause() == EntityDamageEvent.DamageCause.POISON) {
                     var damage = event.getDamage();
                     var inventory = player.getInventory();
                     int protectionPercent = 0;
@@ -70,7 +71,9 @@ public class WitherProtection extends Enchantment {
                         protectionPercent += (getEnchantmentFacade()
                                 .getEnchantmentLevel(inventory.getBoots(), WitherProtection.class) * 5);
                     }
+                    player.sendMessage("Default damage: " + event.getDamage());
                     event.setDamage(damage * (100 - protectionPercent) / 100);
+                    player.sendMessage("New damage: " + event.getDamage());
                 }
             }
 
