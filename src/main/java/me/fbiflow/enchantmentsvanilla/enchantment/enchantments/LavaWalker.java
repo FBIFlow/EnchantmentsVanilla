@@ -43,7 +43,7 @@ public class LavaWalker extends Enchantment {
         return 1;
     }
 
-    private Map<Location, Integer> basaltRemoveTimeMap = new HashMap<>();
+    private final Map<Location, Integer> basaltRemoveTimeMap = new HashMap<>();
 
     @Override
     public @NotNull Listener getEventListener() {

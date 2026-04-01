@@ -23,7 +23,7 @@ public class GiveBookCommand implements CommandExecutor, TabCompleter {
     }
 
     @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String @NotNull [] args) {
         if (args.length == 1) {
             String partialName = args[0].toLowerCase();
             return enchantmentFacade.getAllEnchantments().stream()
@@ -47,7 +47,7 @@ public class GiveBookCommand implements CommandExecutor, TabCompleter {
     }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String @NotNull [] args) {
         if (!(sender instanceof Player player)) {
             return true;
         }
@@ -65,10 +65,10 @@ public class GiveBookCommand implements CommandExecutor, TabCompleter {
             String lowerInput = enchantmentName.toLowerCase();
             List<Enchantment> matches = enchantmentFacade.getAllEnchantments().stream()
                     .filter(e -> e.getEnchantmentName().toLowerCase().contains(lowerInput))
-                    .collect(Collectors.toList());
+                    .toList();
 
             if (matches.size() == 1) {
-                enchantment = matches.get(0);
+                enchantment = matches.getFirst();
                 player.sendMessage("§7Используется зачарование: §e" + enchantment.getEnchantmentName());
             } else if (matches.size() > 1) {
                 player.sendMessage("§cНайдено несколько зачарований, содержащих \"" + enchantmentName + "\":");

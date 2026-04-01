@@ -17,7 +17,7 @@ public class WitherProtection extends Enchantment {
 
     @Override
     public @NotNull String getEnchantmentName() {
-        return "Элементарная защита";
+        return "Элементарная_защита";
     }
 
     @Override
@@ -33,7 +33,7 @@ public class WitherProtection extends Enchantment {
 
     @Override
     public @NotNull String getDescription() {
-        return "Снижает урон от иссушения";
+        return "Снижает урон от ядов";
     }
 
     @Override

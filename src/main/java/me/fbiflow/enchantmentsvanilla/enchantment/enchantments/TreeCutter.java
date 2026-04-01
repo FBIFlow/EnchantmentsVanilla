@@ -122,13 +122,11 @@ public class TreeCutter extends Enchantment {
                         treeLocation.getBlockY(),
                         treeLocation.getBlockZ()
                 ));
-        Set<Vector3i> leavesBlocks = findLeavesBlocks(world, woodBlocks);
         new BukkitRunnable() {
             @Override
             public void run() {
                 ItemStack itemStack = playerInv.getItemInMainHand();
                 handleDrop(itemStack, woodBlocks, world, playerInv);
-                //handleDrop(itemStack, leavesBlocks, world, playerInv);
             }
         }.runTask(Loader.getPlugin(Loader.class));
         var handItem = player.getInventory().getItemInMainHand();

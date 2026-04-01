@@ -92,13 +92,10 @@ public class AnvilService implements Listener {
         }
 
         ItemStack resultBook = new ItemStack(Material.ENCHANTED_BOOK);
-        Map<Enchantment, Integer> resultEnchantments = new HashMap<>();
         int totalCost = 0;
         boolean anyChanges = false;
 
-        for (Map.Entry<Enchantment, Integer> entry : firstEnchantments.entrySet()) {
-            resultEnchantments.put(entry.getKey(), entry.getValue());
-        }
+        Map<Enchantment, Integer> resultEnchantments = new HashMap<>(firstEnchantments);
 
         for (Map.Entry<Enchantment, Integer> entry : secondEnchantments.entrySet()) {
             Enchantment enchantment = entry.getKey();

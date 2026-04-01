@@ -32,7 +32,7 @@ public class Wisdom extends Enchantment {
 
     @Override
     public @NotNull String getDescription() {
-        return "Увеличивает количество выпадаемого опыта при убийстве всех мобов";
+        return "Увеличивает количество опыта при убийстве всех мобов";
     }
 
     @Override
